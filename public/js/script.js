@@ -20,10 +20,10 @@ console.log('hi')
 // }
 
 
-const postBooks = async(bookObj) => {
-    const response = await fetch('/api/books', {
+const postMedications = async(medicationObj) => {
+    const response = await fetch('/api/medications', {
         method: 'POST',
-        body: JSON.stringify(bookObj),
+        body: JSON.stringify(medicationObj),
         headers: {
             'Content-Type': 'application/json',
         }
@@ -38,10 +38,10 @@ const postBooks = async(bookObj) => {
 // postTrips(newTrip)
 
 
-const getBooks = async() => {
-    const response = await fetch('/api/books')
+const getMedications = async() => {
+    const response = await fetch('/api/medications')
     const data = await response.json()
     console.log(data)
 }
 
-getBooks()
+getMedications()
