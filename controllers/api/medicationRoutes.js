@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
     const allMedication = await Medication.findAll()
 
     res.status(200).json(allMedication);
-
   } catch (err) {
     res.status(400).json(err);
   }
@@ -18,6 +17,7 @@ router.post('/', async (req, res) => {
 
     const newMedication = await Medication.create({
 
+      ...req.body
     });
 
     res.status(200).json(newMedication);

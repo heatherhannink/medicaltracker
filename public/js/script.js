@@ -20,10 +20,10 @@
 // }
 
 
-const postMedications = async(medObj) => {
-    const response = await fetch('/api/medicaltracker', {
+const postMedications = async(medicationObj) => {
+    const response = await fetch('/api/medications', {
         method: 'POST',
-        body: JSON.stringify(medObj),
+        body: JSON.stringify(medicationObj),
         headers: {
             'Content-Type': 'application/json',
         }
@@ -38,8 +38,8 @@ const postMedications = async(medObj) => {
 // postTrips(newTrip)
 
 
-const  getMedications= async() => {
-    const response = await fetch('/api/medicaltracker')
+const getMedications = async() => {
+    const response = await fetch('/api/medications')
     const data = await response.json()
     console.log(data)
 }
