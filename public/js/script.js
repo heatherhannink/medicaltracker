@@ -1,4 +1,4 @@
-console.log('hi')
+
 
 // const trip = {
 //     name: 'Mountains',
@@ -20,10 +20,10 @@ console.log('hi')
 // }
 
 
-const postBooks = async(bookObj) => {
-    const response = await fetch('/api/books', {
+const postMedications = async(medObj) => {
+    const response = await fetch('/api/medicaltracker', {
         method: 'POST',
-        body: JSON.stringify(bookObj),
+        body: JSON.stringify(medObj),
         headers: {
             'Content-Type': 'application/json',
         }
@@ -38,10 +38,53 @@ const postBooks = async(bookObj) => {
 // postTrips(newTrip)
 
 
-const getBooks = async() => {
-    const response = await fetch('/api/books')
+const  getMedications= async() => {
+    const response = await fetch('/api/medicaltracker')
     const data = await response.json()
     console.log(data)
 }
 
-getBooks()
+getMedications()
+
+// const text = localStorage.getItem(hoursArr[i].id)
+//     if(text){
+//         console.log(text)
+//         hoursArr[i].children[1].value=text
+//     }
+    
+// }    
+// const clickHandler = (event) => {
+//     const text = event.target.previousElementSibling.value
+//     const parentID = event.target.parentNode.id
+//     console.log (text)
+//     console.log (parentID)
+//     localStorage.setItem(parentID, text)
+
+// }
+// const buttonArr = document.querySelectorAll('button')
+// const textAreaArr = document.querySelectorAll('.description')
+
+// for (let i = 0; i < buttonArr.length; i++){
+    
+
+//     buttonArr[i].addEventListener('click', clickHandler)
+// }
+
+
+// // get data from local storage
+
+// // loop
+
+// // localStorage.getItem()
+
+// //textAreaArr[i].value = whatever came back from local
+
+// var currentHour = dayjs().hour();
+// let date = dayjs().format ("DD, MMMM, YYYY");
+// console.log (date);
+// //current day is displayed at top when you open//
+// let currentDay = document.querySelector ('#currentDay');
+
+// const paragraph = document.createElement("p");
+// paragraph.innerText = date;
+// currentDay.appendChild(paragraph);
