@@ -15,7 +15,7 @@ Medication.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    dosage: {
+    description: {
       type: DataTypes.STRING,
     },
     date_created: {
