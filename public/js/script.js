@@ -6,9 +6,8 @@ const postMedications = async(medicationObj) => {
             'Content-Type': 'application/json',
         }
     })
+    getMedications()
 }
-
-
 
 const getMedications = async() => {
     const response = await fetch('/api/medications')
