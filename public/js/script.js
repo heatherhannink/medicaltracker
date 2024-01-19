@@ -1,7 +1,3 @@
-
-
-
-
 const postMedications = async(medicationObj) => {
     const response = await fetch('/api/medications', {
         method: 'POST',
@@ -10,9 +6,8 @@ const postMedications = async(medicationObj) => {
             'Content-Type': 'application/json',
         }
     })
+    getMedications()
 }
-
-
 
 const getMedications = async() => {
     const response = await fetch('/api/medications')
