@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const tripRoutes = require('./bookRoutes');
+const medicationRoute = require('./medicationRoutes');
 
-router.use('/trips', tripRoutes);
+router.use('/medications', medicationRoute);
 
 module.exports = router;

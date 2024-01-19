@@ -1,11 +1,12 @@
 const router = require('express').Router();
-const { Book } = require('../../models');
+
+const { Medication } = require('../../models');
 
 router.get('/', async (req, res) => {
   try {
-    const allBooks = await Book.findAll()
+    const allMedication = await Medication.findAll()
 
-    res.status(200).json(allBooks);
+    res.status(200).json(allMedication);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -13,11 +14,13 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const newBook = await Book.create({
+
+    const newMedication = await Medication.create({
+
       ...req.body
     });
 
-    res.status(200).json(newBook);
+    res.status(200).json(newMedication);
   } catch (err) {
     res.status(400).json(err);
   }
