@@ -25,6 +25,7 @@ console.log(med)
 console.log(dose)
 const clickHandler = (event) => {
     console.log(med.value)
+
     console.log(dose.value)
     const newMed ={name:med.value,dosage:dose.value}
     postMedications(newMed)
@@ -44,3 +45,12 @@ const addToList = (event) => {
 }
 
 button.addEventListener('click', addToList)
+
+console.log(dose.value)
+const newMed ={name:med.value,dosage:dose.value}
+postMedications(newMed)
+document.getElementById("med", "dose").reset();
+}   
+
+    button.addEventListener('click', clickHandler)
+
