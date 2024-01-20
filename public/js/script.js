@@ -25,6 +25,27 @@ console.log(med)
 console.log(dose)
 const clickHandler = (event) => {
     console.log(med.value)
+
+    console.log(dose.value)
+    const newMed ={name:med.value,dosage:dose.value}
+    postMedications(newMed)
+}   
+
+button.addEventListener('click', clickHandler)
+
+// Appends medication and dosage to the page when a user enters it into the database
+let medList = document.querySelector('#parent')
+
+const addToList = (event) => {
+    event.preventDefault()
+
+    const medP = document.createElement('p')
+    medP.textContent = med.value + " " + dose.value 
+    medList.appendChild(medP)
+}
+
+button.addEventListener('click', addToList)
+
 console.log(dose.value)
 const newMed ={name:med.value,dosage:dose.value}
 postMedications(newMed)
@@ -32,3 +53,4 @@ document.getElementById("med", "dose").reset();
 }   
 
     button.addEventListener('click', clickHandler)
+
