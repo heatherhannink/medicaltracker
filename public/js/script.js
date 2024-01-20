@@ -33,16 +33,14 @@ const clickHandler = (event) => {
 button.addEventListener('click', clickHandler)
 
 // Appends medication and dosage to the page when a user enters it into the database
-let medList = document.querySelector('#input-group')
+let medList = document.querySelector('#parent')
 
 const addToList = (event) => {
     event.preventDefault()
 
     const medP = document.createElement('p')
-    medP.textContent = med.value
+    medP.textContent = med.value + " " + dose.value 
     medList.appendChild(medP)
-    document.querySelector('#Medication').value = ""
-    document.querySelector('#Dosage').value = ""
 }
 
 button.addEventListener('click', addToList)
