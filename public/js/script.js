@@ -50,8 +50,5 @@ console.log(dose.value)
 const newMed ={name:med.value,dosage:dose.value}
 postMedications(newMed)
 document.getElementById("med", "dose").reset();
-  
-
     button.addEventListener('click', clickHandler)
-
    
