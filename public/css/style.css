@@ -1,0 +1,6 @@
+#parent p:nth-of-type(even) {
+    background: #CFE2FF
+}
+#parent p:nth-of-type(odd) {
+    background: #F38D8B
+}
