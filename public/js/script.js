@@ -13,6 +13,9 @@ const getMedications = async() => {
     const response = await fetch('/api/medications')
     const data = await response.json()
     console.log(data)
+   for (let i=0; i<data.length;i++){
+    addToList(data[i])
+   }
 }
 
 getMedications()
@@ -36,15 +39,15 @@ button.addEventListener('click', clickHandler)
 // Appends medication and dosage to the page when a user enters it into the database
 let medList = document.querySelector('#parent')
 
-const addToList = (event) => {
-    event.preventDefault()
+const addToList = (item) => {
+    
 
     const medP = document.createElement('p')
-    medP.textContent = med.value + " " + dose.value 
+    medP.textContent = item.name + " " + item.dosage
     medList.appendChild(medP)
 }
 
-button.addEventListener('click', addToList)
+
 
 console.log(dose.value)
 const newMed ={name:med.value,dosage:dose.value}
