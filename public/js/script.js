@@ -49,6 +49,7 @@ button.addEventListener('click', addToList)
 console.log(dose.value)
 const newMed ={name:med.value,dosage:dose.value}
 postMedications(newMed)
+
 // document.getElementById("med", "dose").reset();
   
 
@@ -176,4 +177,4 @@ function showSuggestions(list){
          'Wellbutrin',
          'Xanax',
          'Zubsolv',
-    ];
+    ]
