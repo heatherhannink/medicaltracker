@@ -9,12 +9,15 @@ const postMedications = async(medicationObj) => {
     getMedications()
 }
 
+let medList = document.querySelector('#parent')
+
 const getMedications = async() => {
     const response = await fetch('/api/medications')
     const data = await response.json()
+    medList.innerHTML = ""
     console.log(data)
    for (let i=0; i<data.length;i++){
-    addToList(data[i])
+    addToList(data[i])  
    }
 }
 
@@ -23,9 +26,11 @@ getMedications()
 const button = document.querySelector('#Search')
 const med = document.querySelector('#Medication')
 const dose = document.querySelector('#Dosage')
+
 console.log(button)
 console.log(med)
 console.log(dose)
+
 const clickHandler = (event) => {
     console.log(med.value)
 
@@ -37,27 +42,36 @@ const clickHandler = (event) => {
 button.addEventListener('click', clickHandler)
 
 // Appends medication and dosage to the page when a user enters it into the database
-let medList = document.querySelector('#parent')
+
 
 const addToList = (item) => {
-    
+    const newListItem = document.createElement('div')
+    newListItem.setAttribute('class', 'appendedListItem')
 
     const medP = document.createElement('p')
     medP.textContent = item.name + " " + item.dosage
-    medList.appendChild(medP)
+    const deleteButton = document.createElement('button')
+    deleteButton.textContent = 'Delete'
+
+    deleteButton.addEventListener('click', function(){
+        newListItem.remove();
+    })
+
+    newListItem.appendChild(medP)
+    newListItem.appendChild(deleteButton)
+
+    medList.appendChild(newListItem)
 }
 
-
+// Clears input boxes once input has been submitted
+button.addEventListener("click", () => {
+    med.value = ""
+})
 
 console.log(dose.value)
 const newMed ={name:med.value,dosage:dose.value}
 postMedications(newMed)
-
-// document.getElementById("med", "dose").reset();
-  
-
-    button.addEventListener('click', clickHandler)
-
+button.addEventListener('click', clickHandler)
     
 const inputBox = document.querySelector("#Medication");
 const suggBox = document.querySelector(".autocom-box");
