@@ -50,6 +50,7 @@ const addToList = (item) => {
 
     const medP = document.createElement('p')
     medP.textContent = item.name + " " + item.dosage
+    
     const deleteButton = document.createElement('button')
     deleteButton.textContent = 'Delete'
 
