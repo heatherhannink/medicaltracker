@@ -42,8 +42,6 @@ const clickHandler = (event) => {
 button.addEventListener('click', clickHandler)
 
 // Appends medication and dosage to the page when a user enters it into the database
-
-
 const addToList = (item) => {
     const newListItem = document.createElement('div')
     newListItem.setAttribute('class', 'appendedListItem')
