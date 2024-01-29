@@ -4,9 +4,11 @@ const postMedications = async(medicationObj) => {
         body: JSON.stringify(medicationObj),
         headers: {
             'Content-Type': 'application/json',
-        }
+        },
+    
+      
     })
-    getMedications()
+  
 }
 
 let medList = document.querySelector('#parent')
@@ -43,24 +45,26 @@ button.addEventListener('click', clickHandler)
 
 // Appends medication and dosage to the page when a user enters it into the database
 const addToList = (item) => {
-    const newListItem = document.createElement('div')
-    newListItem.setAttribute('class', 'appendedListItem')
+    const newListItem = document.createElement('div');
+    newListItem.setAttribute('class', 'appendedListItem');
 
-    const medP = document.createElement('p')
-    medP.textContent = item.name + " " + item.dosage
-    
-    const deleteButton = document.createElement('button')
-    deleteButton.textContent = 'Delete'
+    const medP = document.createElement('p');
+    medP.textContent = item.name + " " + item.dosage;
+    newListItem.appendChild(medP);
 
+const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
     deleteButton.addEventListener('click', function(){
         newListItem.remove();
-    })
+    });    
+   newListItem.appendChild(deleteButton);
 
-    newListItem.appendChild(medP)
-    newListItem.appendChild(deleteButton)
+   medList.appendChild(newListItem);
+},
 
-    medList.appendChild(newListItem)
-}
+
+
+        
 
 // Clears input boxes once input has been submitted
 button.addEventListener("click", () => {
