@@ -16,4 +16,6 @@ link to deployed website- https://medicaltracker.onrender.com/?
 
 link to GitHub repository- https://github.com/heatherhannink/medicaltracker
 
+![Alt text](<public/assets/Screenshot 2024-01-27 at 6.09.03 PM.png>)
+
 Collaborated with - Melody Laukea and Kelsea Eure
