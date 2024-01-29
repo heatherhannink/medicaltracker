@@ -61,9 +61,6 @@ button.addEventListener("click", () => {
     med.value = ""
 })
 
-console.log(dose.value)
-const newMed ={name:med.value,dosage:dose.value}
-postMedications(newMed)
 button.addEventListener('click', clickHandler)
     
 const inputBox = document.querySelector("#Medication");
