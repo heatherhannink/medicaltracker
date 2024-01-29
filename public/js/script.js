@@ -52,7 +52,7 @@ const addToList = (item) => {
         newListItem.remove();
     })
 
-    newListItem.appendChild(medP + deleteButton)
+    newListItem.appendChild(deleteButton)
     medList.appendChild(newListItem);
 }
 
