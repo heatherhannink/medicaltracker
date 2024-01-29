@@ -17,7 +17,7 @@ const getMedications = async() => {
     const response = await fetch('/api/medications')
     const data = await response.json()
     medList.innerHTML = ""
-    console.log(data)
+    // console.log(data)
    for (let i=0; i<data.length;i++){
     addToList(data[i])  
    }
@@ -31,7 +31,6 @@ const dose = document.querySelector('#Dosage')
 
 const clickHandler = (event) => {
     console.log(med.value)
-
     console.log(dose.value)
     const newMed ={name:med.value,dosage:dose.value}
     postMedications(newMed)
