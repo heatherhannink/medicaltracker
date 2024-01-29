@@ -49,18 +49,17 @@ const addToList = (item) => {
     const medP = document.createElement('p')
     medP.textContent = item.name + " " + item.dosage
     
-    const deleteButton = document.createElement('button')
+    newListItem.appendChild(medP)
+    medList.appendChild(newListItem)
+};
+
+const deleteButton = document.createElement('button')
     deleteButton.textContent = 'Delete'
 
     deleteButton.addEventListener('click', function(){
         newListItem.remove();
-    })
 
-    newListItem.appendChild(medP)
-    newListItem.appendChild(deleteButton)
-
-    medList.appendChild(newListItem)
-}
+        newListItem.appendChild(deleteButton)
 
 // Clears input boxes once input has been submitted
 button.addEventListener("click", () => {
