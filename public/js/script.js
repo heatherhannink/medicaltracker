@@ -3,10 +3,8 @@ const postMedications = async(medicationObj) => {
         method: 'POST',
         body: JSON.stringify(medicationObj),
         headers: {
-            'Content-Type': 'application/json',
-        },
-    
-      
+            'Content-Type': 'application/json'
+        }
     })
   
 }
@@ -31,7 +29,6 @@ const dose = document.querySelector('#Dosage')
 
 const clickHandler = (event) => {
     console.log(med.value)
-
     console.log(dose.value)
     const newMed ={name:med.value,dosage:dose.value}
     postMedications(newMed)
@@ -48,14 +45,15 @@ const addToList = (item) => {
     medP.textContent = item.name + " " + item.dosage;
     newListItem.appendChild(medP);
 
-const deleteButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
+//Function deletes items when the delete button is pressed
     deleteButton.addEventListener('click', function(){
         newListItem.remove();
-    });    
-   newListItem.appendChild(deleteButton);
+    })
 
-   medList.appendChild(newListItem);
+    newListItem.appendChild(medP + deleteButton)
+    medList.appendChild(newListItem);
 }
 
 // Clears input boxes once input has been submitted
