@@ -15,7 +15,7 @@ const getMedications = async() => {
     const response = await fetch('/api/medications')
     const data = await response.json()
     medList.innerHTML = ""
-    // console.log(data)
+    console.log(data)
    for (let i=0; i<data.length;i++){
     addToList(data[i])  
    }
@@ -39,22 +39,40 @@ button.addEventListener('click', clickHandler)
 // Appends medication and dosage to the page when a user enters it into the database
 const addToList = (item) => {
     const newListItem = document.createElement('div');
+    const itemId = item.id;
     newListItem.setAttribute('class', 'appendedListItem');
 
     const medP = document.createElement('p');
     medP.textContent = item.name + " " + item.dosage;
     newListItem.appendChild(medP);
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-//Function deletes items when the delete button is pressed
-    deleteButton.addEventListener('click', function(){
-        newListItem.remove();
-    })
-
-    newListItem.appendChild(deleteButton)
-    medList.appendChild(newListItem);
 }
+
+    const deleteMedication = async (itemId) => {
+        const response = await fetch(`/api/medications/${itemId}`, {
+          method: 'DELETE',
+        });
+      };
+
+    // const deleteButton = document.createElement('button');
+    // deleteButton.textContent = 'Delete';
+//Function deletes items when the delete button is pressed
+    deleteButton.addEventListener('click', async function(itemId){
+        const listItem = this.closest('.appendedListItem');
+  const itemId = listItem.getAttribute('data-id'); 
+  // Get the unique identifier
+
+  // Remove the list item from the server-side database
+  await deleteMedication(itemId);
+
+  // Remove the list item from the client-side list
+  listItem.remove();
+});
+//         newListItem.remove();
+//     })
+//     medList.appendChild(newListItem)
+//     newListItem.appendChild(deleteButton)
+//     ;
+// }
 
 // Clears input boxes once input has been submitted
 button.addEventListener("click", () => {
