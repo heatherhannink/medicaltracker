@@ -29,10 +29,6 @@ const button = document.querySelector('#Search')
 const med = document.querySelector('#Medication')
 const dose = document.querySelector('#Dosage')
 
-console.log(button)
-console.log(med)
-console.log(dose)
-
 const clickHandler = (event) => {
     console.log(med.value)
 
@@ -60,11 +56,7 @@ const deleteButton = document.createElement('button');
    newListItem.appendChild(deleteButton);
 
    medList.appendChild(newListItem);
-},
-
-
-
-        
+}
 
 // Clears input boxes once input has been submitted
 button.addEventListener("click", () => {
