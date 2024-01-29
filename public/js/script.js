@@ -76,6 +76,7 @@ const inputBox = document.querySelector("#Medication");
 const suggBox = document.querySelector(".autocom-box");
 
 console.log (inputBox)
+
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
