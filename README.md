@@ -8,7 +8,7 @@ SO THAT users can conveniently store and pull up data as needed
 
 Created a medical tracking app that allows users to log in their medication and dosage and keep a running list. Also allows users to delete and add to their stored data. 
 
-![Alt text](<assets/Screenshot 2024-01-27 at 6.09.03 PM.png>)
+
 
 Usage
 
